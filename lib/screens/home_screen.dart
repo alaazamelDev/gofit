@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
 
 // route builder
   static Route route() => MaterialPageRoute(
-        builder: ((context) => const HomeScreen()),
+        builder: (context) => const HomeScreen(),
       );
 
   @override
