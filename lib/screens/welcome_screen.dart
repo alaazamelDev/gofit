@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
+import 'package:gofit/screens/screens.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   // route builder
   static Route route() => MaterialPageRoute(
         builder: ((context) => const WelcomeScreen()),
       );
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        OnBoardingScreen.route(),
+      );
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

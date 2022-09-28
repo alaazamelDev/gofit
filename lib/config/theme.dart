@@ -31,6 +31,8 @@ abstract class AppTheme {
   static const accentColor = AppColors.accent;
   static final visualDensity = VisualDensity.adaptivePlatformDensity;
 
+// box-shadow: 4px 8px 24px rgba(104, 66, 255, 0.25);
+
   /// Light theme and its settings.
   static ThemeData light() => ThemeData(
         brightness: Brightness.light,
@@ -51,6 +53,7 @@ abstract class AppTheme {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             onPrimary: AppColors.textLight,
+            shadowColor: const Color.fromARGB(200, 104, 66, 255),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(45),
             ),
@@ -84,6 +87,7 @@ abstract class AppTheme {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            shadowColor: const Color.fromARGB(200, 104, 66, 255),
             onPrimary: AppColors.textLight,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(45),

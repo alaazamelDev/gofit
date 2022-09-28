@@ -54,4 +54,19 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+
+  @override
+  void didChangeDependencies() {
+    cacheImages();
+    super.didChangeDependencies();
+  }
+
+  // load images to cache
+  void cacheImages() {
+    precacheImage(const AssetImage(kDumbbellImage), context);
+    precacheImage(const AssetImage(kWelocomeBg), context);
+    precacheImage(const AssetImage(kIntro1Image), context);
+    precacheImage(const AssetImage(kIntro2Image), context);
+    precacheImage(const AssetImage(kIntro3Image), context);
+  }
 }
