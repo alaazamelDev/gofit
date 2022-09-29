@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
         builder: (context, themeNotifier, _) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeNotifier.lightTheme,
+            theme: themeNotifier.getTheme(),
             home: const SplashScreen(),
           );
         },
