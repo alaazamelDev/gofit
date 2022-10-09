@@ -8,3 +8,9 @@ enum Goal {
   improvingEndurance,
   others,
 }
+
+enum Level {
+  beginner,
+  intermediate,
+  advanced,
+}

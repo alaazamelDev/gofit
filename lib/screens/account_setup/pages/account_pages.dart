@@ -3,6 +3,7 @@ import 'package:gofit/screens/account_setup/pages/about_fragment.dart';
 import 'package:gofit/screens/account_setup/pages/age_fragment.dart';
 import 'package:gofit/screens/account_setup/pages/goal_fragment.dart';
 import 'package:gofit/screens/account_setup/pages/height_fragment.dart';
+import 'package:gofit/screens/account_setup/pages/physical_level_fragment.dart';
 import 'package:gofit/screens/account_setup/pages/weight_fragment.dart';
 
 final List<Widget> accountPages = [
@@ -11,4 +12,5 @@ final List<Widget> accountPages = [
   WeightFragment(),
   HeightFragment(),
   GoalFragment(),
+  PhysicalActivityLevel(),
 ];
