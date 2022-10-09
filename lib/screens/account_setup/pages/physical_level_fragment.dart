@@ -3,8 +3,8 @@ import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
 import 'package:gofit/domain/enums.dart';
 
-class PhysicalActivityLevel extends StatelessWidget {
-  PhysicalActivityLevel({Key? key}) : super(key: key);
+class PhysicalLevelFragment extends StatelessWidget {
+  PhysicalLevelFragment({Key? key}) : super(key: key);
 
   final List<String> levelsTitle = [
     "Beginner",
@@ -73,33 +73,37 @@ class PhysicalActivityLevel extends StatelessWidget {
               ),
             ),
           ),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(primary: AppColors.textFaded),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      'Back',
+          Padding(
+            padding: const EdgeInsets.only(bottom: defaultPadding),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(primary: AppColors.textFaded),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: Text(
+                        'Back',
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: defaultPadding),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text(
-                      'Continue',
+                const SizedBox(width: defaultPadding),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: Text(
+                        'Continue',
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ],
       ),

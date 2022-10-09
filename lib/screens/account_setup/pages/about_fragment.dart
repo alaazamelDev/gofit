@@ -78,12 +78,15 @@ class AboutFragment extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: defaultPadding),
-              child: Text(
-                'Continue',
+          Padding(
+            padding: const EdgeInsets.only(bottom: defaultPadding),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                child: Text(
+                  'Continue',
+                ),
               ),
             ),
           ),
