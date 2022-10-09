@@ -19,7 +19,7 @@ class AboutFragment extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.25,
+            height: MediaQuery.of(context).size.height * 0.22,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -78,12 +78,15 @@ class AboutFragment extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: defaultPadding),
-              child: Text(
-                'Continue',
+          Padding(
+            padding: const EdgeInsets.only(bottom: defaultPadding),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                child: Text(
+                  'Continue',
+                ),
               ),
             ),
           ),
@@ -123,7 +126,9 @@ class GenderSelector extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                Icons.male_rounded,
+                gender == Gender.male
+                    ? Icons.male_rounded
+                    : Icons.female_rounded,
                 color: AppColors.textLight,
                 size: (MediaQuery.of(context).size.width * 0.5) * 0.4,
               ),
