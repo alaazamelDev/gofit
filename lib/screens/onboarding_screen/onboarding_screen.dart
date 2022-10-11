@@ -89,7 +89,7 @@ class OnBoardingScreen extends StatelessWidget {
                             } else {
                               Navigator.pushReplacement(
                                 context,
-                                AccountSetupScreen.route(),
+                                AboutFragment.route(),
                               );
                             }
                           },
