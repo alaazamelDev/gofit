@@ -13,5 +13,10 @@ const kIntro2Image = 'assets/images/intro2.jpg';
 const kIntro3Image = 'assets/images/intro3.jpg';
 const kProfileImage = 'assets/images/profile.jpg';
 
+// icons assets
+const kFacebookSvg = 'assets/svg/facebook.svg';
+const kGoogleSvg = 'assets/svg/google.svg';
+const kAppleSvg = 'assets/svg/apple.svg';
+
 // default dimensions
 const double defaultPadding = 16;
