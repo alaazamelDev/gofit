@@ -18,7 +18,13 @@ class LabeledDivider extends StatelessWidget {
         )),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-          child: Text(label),
+          child: Text(
+            label,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
         const Expanded(child: Divider(thickness: 1)),
       ],
