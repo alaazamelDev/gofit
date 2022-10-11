@@ -4,6 +4,7 @@ import 'package:gofit/screens/authentication/components/labeled_action_button.da
 import 'package:gofit/screens/authentication/components/labeled_divider.dart';
 import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/social_media_button.dart';
+import 'package:gofit/screens/authentication/sign_up_screen.dart';
 
 class LetInScreen extends StatelessWidget {
   const LetInScreen({Key? key}) : super(key: key);
@@ -52,7 +53,9 @@ class LetInScreen extends StatelessWidget {
             LabeledActionButton(
               queryText: "Don't have an account?",
               actionText: "Sign Up",
-              onAction: () {},
+              onAction: () {
+                Navigator.push(context, SignUpScreen.route());
+              },
             )
           ],
         ),
