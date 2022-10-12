@@ -4,6 +4,7 @@ import 'package:gofit/screens/authentication/components/labeled_action_button.da
 import 'package:gofit/screens/authentication/components/labeled_divider.dart';
 import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/social_media_button.dart';
+import 'package:gofit/screens/authentication/sign_in_screen.dart';
 import 'package:gofit/screens/authentication/sign_up_screen.dart';
 
 class LetInScreen extends StatelessWidget {
@@ -43,7 +44,9 @@ class LetInScreen extends StatelessWidget {
             const LabeledDivider(label: "OR"),
             SizedBox(height: MediaQuery.of(context).size.height * 0.07),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, SignInScreen.route());
+              },
               child: const Padding(
                 padding: EdgeInsets.all(defaultPadding),
                 child: Text("Sign in with password"),

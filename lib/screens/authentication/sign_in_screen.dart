@@ -7,11 +7,11 @@ import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/squared_social_button.dart';
 import 'package:gofit/widgets/input_field.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  SignInScreen({Key? key}) : super(key: key);
 
   static Route route() => MaterialPageRoute(
-        builder: ((context) => SignUpScreen()),
+        builder: ((context) => SignInScreen()),
       );
 
   final ValueNotifier<bool> rememberMe = ValueNotifier(false);
@@ -29,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const PageTitle(
-                  title: "Create your\nAccount",
+                  title: "Login to your\nAccount",
                 ),
                 InputField(
                   prefixWidget: const Icon(
@@ -97,11 +97,22 @@ class SignUpScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(defaultPadding),
                     child: Text(
-                      "Sign up",
+                      "Sign in",
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textLight,
-                          ),
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textLight),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: defaultPadding),
+                Center(
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "Forgot the password?",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.secondary),
                     ),
                   ),
                 ),
@@ -128,8 +139,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 LabeledActionButton(
-                  queryText: "Already have an account?",
-                  actionText: "Sign in",
+                  queryText: "Don't have an account?",
+                  actionText: "Sign up",
                   onAction: () {},
                 )
               ],
