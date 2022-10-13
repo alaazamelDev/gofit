@@ -119,6 +119,7 @@ class _ResetOption extends StatelessWidget {
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
+            width: 2,
             color: isSelected ? AppColors.secondary : Colors.transparent,
           ),
         ),
