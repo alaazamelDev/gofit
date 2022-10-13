@@ -14,3 +14,8 @@ enum Level {
   intermediate,
   advanced,
 }
+
+enum ResetType {
+  sms,
+  email,
+}

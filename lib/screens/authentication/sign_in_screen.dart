@@ -5,6 +5,7 @@ import 'package:gofit/screens/authentication/components/labeled_action_button.da
 import 'package:gofit/screens/authentication/components/labeled_divider.dart';
 import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/squared_social_button.dart';
+import 'package:gofit/screens/authentication/forgot_password/reset_method_page.dart';
 import 'package:gofit/widgets/input_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -107,7 +108,9 @@ class SignInScreen extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 Center(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, ResetMethodPage.route());
+                    },
                     child: Text(
                       "Forgot the password?",
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
