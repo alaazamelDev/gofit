@@ -6,6 +6,7 @@ import 'package:gofit/screens/authentication/components/labeled_divider.dart';
 import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/squared_social_button.dart';
 import 'package:gofit/screens/authentication/forgot_password/reset_method_page.dart';
+import 'package:gofit/screens/authentication/sign_up_screen.dart';
 import 'package:gofit/widgets/input_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -144,7 +145,9 @@ class SignInScreen extends StatelessWidget {
                 LabeledActionButton(
                   queryText: "Don't have an account?",
                   actionText: "Sign up",
-                  onAction: () {},
+                  onAction: () {
+                    Navigator.pushReplacement(context, SignUpScreen.route());
+                  },
                 )
               ],
             ),
