@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
 import 'package:gofit/domain/enums.dart';
+import 'package:gofit/screens/authentication/forgot_password/pin_code_page.dart';
 
 class ResetMethodPage extends StatelessWidget {
   ResetMethodPage({Key? key}) : super(key: key);
@@ -81,7 +82,9 @@ class ResetMethodPage extends StatelessWidget {
             ),
             const SizedBox(height: defaultPadding),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, PinCodePage.route());
+              },
               child: const Padding(
                 padding: EdgeInsets.all(defaultPadding),
                 child: Text("Continue"),
