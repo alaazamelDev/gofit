@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
+import 'package:gofit/screens/authentication/let_in_screen.dart';
 import 'package:gofit/widgets/input_field.dart';
 
 class ProfileFragment extends StatelessWidget {
@@ -102,6 +103,11 @@ class ProfileFragment extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             // todo: on skip button pressed
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              LetInScreen.route(),
+                              (route) => false,
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                               primary: AppColors.textFaded),
@@ -119,6 +125,11 @@ class ProfileFragment extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             // todo: on continue button pressed
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              LetInScreen.route(),
+                              (route) => false,
+                            );
                           },
                           child: const Padding(
                             padding:
