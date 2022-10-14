@@ -10,7 +10,8 @@ class ThemeNotifier with ChangeNotifier {
   static final lightTheme = AppTheme.light();
 
   ThemeData? _themeData;
-  ThemeData? getTheme() => _themeData;
+  ThemeData? getTheme() => lightTheme;
+  //  _themeData;
 
   ThemeNotifier() {
     StorageManager.readData(themeModePrefKey).then((value) {
