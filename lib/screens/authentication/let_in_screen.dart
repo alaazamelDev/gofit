@@ -10,6 +10,10 @@ import 'package:gofit/screens/authentication/sign_up_screen.dart';
 class LetInScreen extends StatelessWidget {
   const LetInScreen({Key? key}) : super(key: key);
 
+  static Route route() => MaterialPageRoute(
+        builder: ((context) => const LetInScreen()),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
