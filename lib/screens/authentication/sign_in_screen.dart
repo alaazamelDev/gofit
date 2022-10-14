@@ -7,7 +7,7 @@ import 'package:gofit/screens/authentication/components/page_title.dart';
 import 'package:gofit/screens/authentication/components/squared_social_button.dart';
 import 'package:gofit/screens/authentication/forgot_password/reset_method_page.dart';
 import 'package:gofit/screens/authentication/sign_up_screen.dart';
-import 'package:gofit/screens/home_screen.dart';
+import 'package:gofit/screens/main_screen/main_screen.dart';
 import 'package:gofit/widgets/input_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -99,7 +99,7 @@ class SignInScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      HomeScreen.route(),
+                      MainScreen.route(),
                       (route) => false,
                     );
                   },
