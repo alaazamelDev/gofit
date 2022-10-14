@@ -88,8 +88,8 @@ class PhysicalLevelFragment extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.textFaded),
+                      style: ElevatedButton.styleFrom(
+                          primary: AppColors.textFaded),
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: defaultPadding),
                         child: Text(
@@ -158,10 +158,10 @@ class LevelCard extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: isSelected ? AppColors.textLight : null,
+                ),
           ),
         ),
       ),

@@ -98,8 +98,8 @@ class GoalFragment extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.textFaded),
+                      style: ElevatedButton.styleFrom(
+                          primary: AppColors.textFaded),
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: defaultPadding),
                         child: Text(
@@ -165,7 +165,9 @@ class GoalCard extends StatelessWidget {
                   ? AppColors.secondary
                   : Theme.of(context).cardColor),
           borderRadius: BorderRadius.circular(16),
-          color: Theme.of(context).cardColor,
+          color: isChecked
+              ? AppColors.secondary.withOpacity(0.05)
+              : Theme.of(context).cardColor,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

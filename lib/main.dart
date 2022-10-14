@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gofit/config/theme_data.dart';
 import 'package:gofit/screens/authentication/let_in_screen.dart';
+import 'package:gofit/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -35,7 +36,7 @@ class MainApp extends StatelessWidget {
             theme: ThemeNotifier.lightTheme,
             darkTheme: ThemeNotifier.darkTheme,
             themeMode: ThemeMode.system,
-            home: const LetInScreen(),
+            home: const SplashScreen(),
           );
         },
       ),
