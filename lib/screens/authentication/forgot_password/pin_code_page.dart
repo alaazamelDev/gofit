@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
+import 'package:gofit/screens/authentication/forgot_password/new_password_page.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodePage extends StatelessWidget {
@@ -95,7 +96,9 @@ class PinCodePage extends StatelessWidget {
                     children: [
                       const SizedBox(height: defaultPadding),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, NewPasswordPage.route());
+                        },
                         child: const Padding(
                           padding: EdgeInsets.all(defaultPadding),
                           child: Text("Verify"),
