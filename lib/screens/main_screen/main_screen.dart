@@ -23,7 +23,7 @@ class MainScreen extends StatelessWidget {
       "index": 0,
       "label": "Home",
       "iconAsset": kHomeSvg,
-      "widget": const HomePage(),
+      "widget": HomePage(),
     },
     {
       "index": 1,
@@ -88,7 +88,7 @@ class MainScreen extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
-              kBookmarkSvg,
+              kBookmarkOutlinedSvg,
               color: Theme.of(context).textTheme.bodyLarge!.color,
             ),
             splashRadius: 18,
@@ -103,7 +103,7 @@ class MainScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: fragments
                     .map<Widget>(
@@ -155,6 +155,7 @@ class _BottomAppBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: () {
         onPressed(itemIndex);
       },
