@@ -7,6 +7,7 @@ import 'package:gofit/screens/main_screen/discover/discover_page.dart';
 import 'package:gofit/screens/main_screen/home/home_page.dart';
 import 'package:gofit/screens/main_screen/insight/insight_page.dart';
 import 'package:gofit/screens/main_screen/profile/profile_page.dart';
+import 'package:gofit/screens/notifications/notifications_screen.dart';
 import 'package:gofit/widgets/app_icon.dart';
 
 class MainScreen extends StatelessWidget {
@@ -79,7 +80,9 @@ class MainScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, NotificationsScreen.route());
+            },
             icon: SvgPicture.asset(
               kNotificationSvg,
               color: Theme.of(context).textTheme.bodyLarge!.color,

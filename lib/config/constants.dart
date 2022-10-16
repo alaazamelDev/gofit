@@ -27,6 +27,7 @@ const kHomeSvg = 'assets/svg/home.svg';
 const kDiscoverSvg = 'assets/svg/discovery.svg';
 const kInsightSvg = 'assets/svg/insight.svg';
 const kProfileSvg = 'assets/svg/profile.svg';
+const kMenuSvg = 'assets/svg/menu.svg';
 
 // default dimensions
 const double defaultPadding = 16;
