@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/config/theme.dart';
+import 'package:gofit/screens/bookmarks/my_bookmarks_screen.dart';
 import 'package:gofit/screens/main_screen/discover/discover_page.dart';
 import 'package:gofit/screens/main_screen/home/home_page.dart';
 import 'package:gofit/screens/main_screen/insight/insight_page.dart';
@@ -86,7 +87,9 @@ class MainScreen extends StatelessWidget {
             splashRadius: 18,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MyBookmarksScreen.route());
+            },
             icon: SvgPicture.asset(
               kBookmarkOutlinedSvg,
               color: Theme.of(context).textTheme.bodyLarge!.color,

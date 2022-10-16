@@ -10,15 +10,19 @@ class FeaturedWorkoutCard extends StatelessWidget {
     Key? key,
     required this.workout,
     required this.onBookmarkPressed,
+    this.isSquared = false,
+    this.borderRadius,
   }) : super(key: key);
 
   final Function(int) onBookmarkPressed;
   final Workout workout;
+  final bool isSquared;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: borderRadius ?? BorderRadius.circular(24),
       child: Stack(
         children: [
           Container(
@@ -40,32 +44,49 @@ class FeaturedWorkoutCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: (MediaQuery.of(context).size.height * 0.3) * 0.1,
+            bottom: isSquared
+                ? defaultPadding
+                : (MediaQuery.of(context).size.height * 0.3) * 0.1,
             left: 0,
             right: 0,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding * 2),
+              padding: EdgeInsets.symmetric(
+                horizontal: isSquared ? defaultPadding : defaultPadding * 2,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     workout.title!,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: AppColors.textLight,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    style: isSquared
+                        ? Theme.of(context).textTheme.titleSmall!.copyWith(
+                              color: AppColors.textLight,
+                              fontWeight: FontWeight.bold,
+                            )
+                        : Theme.of(context).textTheme.titleLarge!.copyWith(
+                              color: AppColors.textLight,
+                              fontWeight: FontWeight.bold,
+                            ),
                   ),
-                  const SizedBox(height: defaultPadding * 0.5),
+                  SizedBox(
+                    height: isSquared
+                        ? defaultPadding * 0.25
+                        : defaultPadding * 0.5,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "${workout.duration} minutes  |  ${Helper.getLevelLabel(workout.level!)}",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge!
-                            .copyWith(color: AppColors.textFaded),
+                        style: isSquared
+                            ? Theme.of(context).textTheme.bodySmall!.copyWith(
+                                  color: AppColors.textFaded,
+                                  fontSize: 10,
+                                )
+                            : Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(color: AppColors.textFaded),
                       ),
                       const SizedBox(width: defaultPadding * 0.5),
                       GestureDetector(

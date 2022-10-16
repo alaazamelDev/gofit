@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gofit/config/constants.dart';
 import 'package:gofit/domain/enums.dart';
 import 'package:gofit/domain/models/workout.dart';
-import 'package:gofit/screens/main_screen/home/components/featured_workout_card.dart';
+import 'package:gofit/widgets/featured_workout_card.dart';
 import 'package:gofit/screens/main_screen/home/components/section_title.dart';
 import 'package:gofit/screens/main_screen/home/components/workout_level_item.dart';
 
@@ -15,7 +15,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(defaultPadding * 1.5),
+      padding: const EdgeInsets.fromLTRB(
+        defaultPadding * 1.5,
+        defaultPadding * 1.5,
+        defaultPadding * 1.5,
+        defaultPadding * 0.5,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -114,7 +119,7 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(height: defaultPadding * 0.5),
+          const SizedBox(height: defaultPadding),
           ValueListenableBuilder<Level>(
             valueListenable: selectedLevel,
             builder: (context, level, _) {
@@ -146,4 +151,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
