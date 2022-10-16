@@ -11,12 +11,14 @@ class FeaturedWorkoutCard extends StatelessWidget {
     required this.workout,
     required this.onBookmarkPressed,
     this.isSquared = false,
+    this.hideBookmarkButton = false,
     this.borderRadius,
   }) : super(key: key);
 
   final Function(int) onBookmarkPressed;
   final Workout workout;
   final bool isSquared;
+  final bool hideBookmarkButton;
   final BorderRadius? borderRadius;
 
   @override
@@ -88,20 +90,22 @@ class FeaturedWorkoutCard extends StatelessWidget {
                                 .bodyLarge!
                                 .copyWith(color: AppColors.textFaded),
                       ),
-                      const SizedBox(width: defaultPadding * 0.5),
-                      GestureDetector(
-                        onTap: () {
-                          onBookmarkPressed(workout.id!);
-                        },
-                        child: SvgPicture.asset(
-                          workout.isBookmarked
-                              ? kBookmarkFilledSvg
-                              : kBookmarkOutlinedSvg,
-                          color: AppColors.textFaded,
-                          width: 20,
-                          height: 20,
+                      if (!hideBookmarkButton) ...[
+                        const SizedBox(width: defaultPadding * 0.5),
+                        GestureDetector(
+                          onTap: () {
+                            onBookmarkPressed(workout.id!);
+                          },
+                          child: SvgPicture.asset(
+                            workout.isBookmarked
+                                ? kBookmarkFilledSvg
+                                : kBookmarkOutlinedSvg,
+                            color: AppColors.textFaded,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
-                      ),
+                      ],
                     ],
                   ),
                 ],

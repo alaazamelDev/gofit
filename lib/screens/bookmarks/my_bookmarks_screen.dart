@@ -15,6 +15,119 @@ class MyBookmarksScreen extends StatelessWidget {
   final ValueNotifier<bool> isGirdView = ValueNotifier(true);
   final ValueNotifier<List<Workout>> workoutExercises = ValueNotifier(workouts);
 
+  Future<bool> _showBookmarkRemovalConfirmationSheet(
+    BuildContext context, {
+    required Workout workout,
+  }) async {
+    return await showModalBottomSheet<bool>(
+          context: context,
+          clipBehavior: Clip.hardEdge,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24),
+              topRight: Radius.circular(24),
+            ),
+          ),
+          builder: (context) {
+            return Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(defaultPadding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: defaultPadding),
+                    Text(
+                      "Remove from Bookmarks?",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: defaultPadding),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: defaultPadding * 2,
+                      ),
+                      child: Divider(
+                        thickness: 0.2,
+                        color: Theme.of(context).hintColor,
+                      ),
+                    ),
+                    const SizedBox(height: defaultPadding),
+                    Flexible(
+                      child: FeaturedWorkoutCard(
+                        workout: workout,
+                        hideBookmarkButton: true,
+                        onBookmarkPressed: (ex) {},
+                      ),
+                    ),
+                    const SizedBox(height: defaultPadding * 0.5),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: defaultPadding,
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(false);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: AppColors.textLight,
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.all(defaultPadding * 0.5),
+                                child: Text(
+                                  "Cancel",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(color: AppColors.secondary),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: defaultPadding),
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(true);
+                              },
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.all(defaultPadding * 0.5),
+                                child: Text(
+                                  "Yes, Remove",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(color: AppColors.textLight),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ) ??
+        false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,7 +210,14 @@ class MyBookmarksScreen extends StatelessWidget {
             return FeaturedWorkoutCard(
               workout: exercises[index],
               isSquared: true,
-              onBookmarkPressed: (exercise) {},
+              onBookmarkPressed: (exercise) {
+                _showBookmarkRemovalConfirmationSheet(
+                  context,
+                  workout: exercises.firstWhere(
+                    (element) => element.id == exercise,
+                  ),
+                );
+              },
             );
           },
         );
@@ -117,7 +237,14 @@ class MyBookmarksScreen extends StatelessWidget {
               child: FeaturedWorkoutCard(
                 workout: exercises[index],
                 borderRadius: BorderRadius.circular(16),
-                onBookmarkPressed: (exercise) {},
+                onBookmarkPressed: (exercise) {
+                  _showBookmarkRemovalConfirmationSheet(
+                    context,
+                    workout: exercises.firstWhere(
+                      (element) => element.id == exercise,
+                    ),
+                  );
+                },
               ),
             );
           },
