@@ -20,6 +20,14 @@ const kCompleted = 'assets/svg/completed.svg';
 const kFacebookSvg = 'assets/svg/facebook.svg';
 const kGoogleSvg = 'assets/svg/google.svg';
 const kAppleSvg = 'assets/svg/apple.svg';
+const kNotificationSvg = 'assets/svg/notification.svg';
+const kBookmarkOutlinedSvg = 'assets/svg/bookmark_outline.svg';
+const kBookmarkFilledSvg = 'assets/svg/bookmark_filled.svg';
+const kHomeSvg = 'assets/svg/home.svg';
+const kDiscoverSvg = 'assets/svg/discovery.svg';
+const kInsightSvg = 'assets/svg/insight.svg';
+const kProfileSvg = 'assets/svg/profile.svg';
+const kMenuSvg = 'assets/svg/menu.svg';
 
 // default dimensions
 const double defaultPadding = 16;
